@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tomte: #c30f16;
+  --font-display: "Italianno", cursive;
+}

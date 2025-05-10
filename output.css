@@ -28,6 +28,7 @@
     --font-weight-bold: 700;
     --tracking-wide: 0.025em;
     --tracking-wider: 0.05em;
+    --radius-4xl: 2rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-tomte: #c30f16;
@@ -183,17 +184,8 @@
   .flex {
     display: flex;
   }
-  .h-8 {
-    height: calc(var(--spacing) * 8);
-  }
   .w-60 {
     width: calc(var(--spacing) * 60);
-  }
-  .w-lg {
-    width: var(--container-lg);
-  }
-  .w-xl {
-    width: var(--container-xl);
   }
   .max-w-lg {
     max-width: var(--container-lg);
@@ -222,11 +214,17 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
-  .gap-10 {
-    gap: calc(var(--spacing) * 10);
+  .overflow-hidden {
+    overflow: hidden;
   }
-  .gap-12 {
-    gap: calc(var(--spacing) * 12);
+  .rounded-4xl {
+    border-radius: var(--radius-4xl);
+  }
+  .rounded-\[50px\] {
+    border-radius: 50px;
+  }
+  .rounded-\[64px\] {
+    border-radius: 64px;
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -249,9 +247,6 @@
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
   }
-  .py-2 {
-    padding-block: calc(var(--spacing) * 2);
-  }
   .py-24 {
     padding-block: calc(var(--spacing) * 24);
   }
@@ -261,28 +256,14 @@
   .pt-12 {
     padding-top: calc(var(--spacing) * 12);
   }
-  .pt-25 {
-    padding-top: calc(var(--spacing) * 25);
-  }
   .pb-8 {
     padding-bottom: calc(var(--spacing) * 8);
-  }
-  .pb-16 {
-    padding-bottom: calc(var(--spacing) * 16);
   }
   .text-center {
     text-align: center;
   }
   .font-display {
     font-family: var(--font-display);
-  }
-  .text-2xl {
-    font-size: var(--text-2xl);
-    line-height: var(--tw-leading, var(--text-2xl--line-height));
-  }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .text-4xl {
     font-size: var(--text-4xl);
@@ -292,16 +273,9 @@
     font-size: var(--text-6xl);
     line-height: var(--tw-leading, var(--text-6xl--line-height));
   }
-  .text-8xl {
-    font-size: var(--text-8xl);
-    line-height: var(--tw-leading, var(--text-8xl--line-height));
-  }
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
-  }
-  .text-\[24px\] {
-    font-size: 24px;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -310,18 +284,6 @@
   .font-extralight {
     --tw-font-weight: var(--font-weight-extralight);
     font-weight: var(--font-weight-extralight);
-  }
-  .font-light {
-    --tw-font-weight: var(--font-weight-light);
-    font-weight: var(--font-weight-light);
-  }
-  .tracking-wide {
-    --tw-tracking: var(--tracking-wide);
-    letter-spacing: var(--tracking-wide);
-  }
-  .tracking-wider {
-    --tw-tracking: var(--tracking-wider);
-    letter-spacing: var(--tracking-wider);
   }
   .text-balance {
     text-wrap: balance;
@@ -335,9 +297,6 @@
   .underline {
     text-decoration-line: underline;
   }
-  .\[word-spacing\:-20px\] {
-    word-spacing: -20px;
-  }
   .\[word-spacing\:20px\] {
     word-spacing: 20px;
   }
@@ -346,15 +305,10 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-tracking {
-  syntax: "*";
-  inherits: false;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-font-weight: initial;
-      --tw-tracking: initial;
     }
   }
 }
